@@ -2,15 +2,18 @@ module.exports = {
   up(queryInterface, name, logger = console) {
     return queryInterface.sequelize
       .query(
+        // Add the sys_period column to the table
         `ALTER TABLE ${name}
     ADD COLUMN sys_period tstzrange NOT NULL DEFAULT tstzrange(current_timestamp, null);`
       )
       .then(() =>
+        // Create history table
         queryInterface.sequelize.query(
           `CREATE TABLE ${name}_history (LIKE ${name});`
         )
       )
       .then(() =>
+        // create the trigger to populate the history table
         queryInterface.sequelize.query(`CREATE TRIGGER versioning_trigger
       BEFORE INSERT OR UPDATE OR DELETE ON ${name}
       FOR EACH ROW EXECUTE PROCEDURE versioning(
