@@ -30,4 +30,4 @@ This will launch a server listening on port 3000 with these routes inside :
 
 Products are resources with only an id::UUID and a name::string property.
 
-
+The routes to retrieve some data accepts a as_of_time query parameter, used to make the query as if we were at a different pas time, in order for instance, to recreate the data that was present at a certain time for an issue investigation.
