@@ -28,6 +28,6 @@ This will launch a server listening on port 3000 with these routes inside :
 - /v1/products/:id PATCH
 - /v1/products/:id DELETE
 
-Products are resources with only an id and a name::string property.
+Products are resources with only an id::UUID and a name::string property.
 
 
