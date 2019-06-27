@@ -4,6 +4,11 @@
   "description": "Simple project for example of temporal tables",
   "main": "index.js",
   "scripts": {
+    "start": "node ./index.js",
+    "sequelize": "./node_modules/.bin/sequelize",
+    "db:create": "./node_modules/.bin/sequelize db:create",
+    "db:migrate": "./node_modules/.bin/sequelize db:migrate",
+    "db:rollback": "./node_modules/.bin/sequelize db:rollback",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +23,11 @@
   "homepage": "https://github.com/Brigad/temporal-tables-demo#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "pg": "^7.11.0",
     "sequelize": "^5.8.12"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "sequelize-cli": "^5.5.0"
   }
 }

@@ -13,12 +13,13 @@ class Product extends Sequelize.Model {
       },
       name: {
         type: Sequelize.STRING
-      }
+      },
     };
   }
 }
 
 module.exports = (sequelize) => {
-	Product.init(Product.attributes(), { sequelize, modelName: Product.tableName() });
+	Product.init(Product.attributes(), { sequelize, modelName: Product.tableName(), timestamps: false });
 	return Product;
 }
+module.exports.Product = Product;
