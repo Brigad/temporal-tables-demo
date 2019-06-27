@@ -9,7 +9,6 @@
     "db:create": "./node_modules/.bin/sequelize db:create",
     "db:migrate": "./node_modules/.bin/sequelize db:migrate",
     "db:rollback": "./node_modules/.bin/sequelize db:rollback",
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
